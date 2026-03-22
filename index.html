@@ -70,7 +70,7 @@ Check your Browserslist config to be sure that your targets are set up correctly
 
 `))}gv.exports=Dr;function Dr(...r){let e;if(r.length===1&&V5(r[0])?(e=r[0],r=void 0):r.length===0||r.length===1&&!r[0]?r=void 0:r.length<=2&&(Array.isArray(r[0])||!r[0])?(e=r[1],r=r[0]):typeof r[r.length-1]=="object"&&(e=r.pop()),e||(e={}),e.browser)throw new Error("Change `browser` option to `overrideBrowserslist` in Autoprefixer");if(e.browserslist)throw new Error("Change `browserslist` option to `overrideBrowserslist` in Autoprefixer");e.overrideBrowserslist?r=e.overrideBrowserslist:e.browsers&&(typeof console!="undefined"&&console.warn&&(of.red?console.warn(of.red(mv.replace(/`[^`]+`/g,n=>of.yellow(n.slice(1,-1))))):console.warn(mv)),r=e.browsers);let t={ignoreUnknownVersions:e.ignoreUnknownVersions,stats:e.stats,env:e.env};function i(n){let s=hv,a=new F5(s.browsers,r,n,t),o=a.selected.join(", ")+JSON.stringify(e);return lf.has(o)||lf.set(o,new j5(s.prefixes,a,e)),lf.get(o)}return{postcssPlugin:"autoprefixer",prepare(n){let s=i({from:n.opts.from,env:e.env});return{OnceExit(a){H5(n,s),e.remove!==!1&&s.processor.remove(a,n),e.add!==!1&&s.processor.add(a,n)}}},info(n){return n=n||{},n.from=n.from||m.cwd(),U5(i(n))},options:e,browsers:r}}Dr.postcss=!0;Dr.data=hv;Dr.defaults=N5.defaults;Dr.info=()=>Dr().info()});var bv={};Ge(bv,{default:()=>W5});var W5,wv=P(()=>{u();W5=[]});var xv={};Ge(xv,{default:()=>G5});var vv,G5,kv=P(()=>{u();Xi();vv=pe(rn()),G5=St(vv.default.theme)});var Av={};Ge(Av,{default:()=>Q5});var Sv,Q5,Cv=P(()=>{u();Xi();Sv=pe(rn()),Q5=St(Sv.default)});u();"use strict";var Y5=vt(_y()),K5=vt($e()),X5=vt(yv()),Z5=vt((wv(),bv)),J5=vt((kv(),xv)),eP=vt((Cv(),Av)),tP=vt((Vs(),_f)),rP=vt((al(),sl)),iP=vt((sa(),sc));function vt(r){return r&&r.__esModule?r:{default:r}}console.warn("cdn.tailwindcss.com should not be used in production. To use Tailwind CSS in production, install it as a PostCSS plugin or use the Tailwind CLI: https://tailwindcss.com/docs/installation");var Ns="tailwind",uf="text/tailwindcss",_v="/template.html",Yt,Ev=!0,Ov=0,ff=new Set,cf,Tv="",Rv=(r=!1)=>({get(e,t){return(!r||t==="config")&&typeof e[t]=="object"&&e[t]!==null?new Proxy(e[t],Rv()):e[t]},set(e,t,i){return e[t]=i,(!r||t==="config")&&pf(!0),!0}});window[Ns]=new Proxy({config:{},defaultTheme:J5.default,defaultConfig:eP.default,colors:tP.default,plugin:rP.default,resolveConfig:iP.default},Rv(!0));function Pv(r){cf.observe(r,{attributes:!0,attributeFilter:["type"],characterData:!0,subtree:!0,childList:!0})}new MutationObserver(async r=>{let e=!1;if(!cf){cf=new MutationObserver(async()=>await pf(!0));for(let t of document.querySelectorAll(`style[type="${uf}"]`))Pv(t)}for(let t of r)for(let i of t.addedNodes)i.nodeType===1&&i.tagName==="STYLE"&&i.getAttribute("type")===uf&&(Pv(i),e=!0);await pf(e)}).observe(document.documentElement,{attributes:!0,attributeFilter:["class"],childList:!0,subtree:!0});async function pf(r=!1){r&&(Ov++,ff.clear());let e="";for(let i of document.querySelectorAll(`style[type="${uf}"]`))e+=i.textContent;let t=new Set;for(let i of document.querySelectorAll("[class]"))for(let n of i.classList)ff.has(n)||t.add(n);if(document.body&&(Ev||t.size>0||e!==Tv||!Yt||!Yt.isConnected)){for(let n of t)ff.add(n);Ev=!1,Tv=e,self[_v]=Array.from(t).join(" ");let{css:i}=await(0,K5.default)([(0,Y5.default)({...window[Ns].config,_hash:Ov,content:{files:[_v],extract:{html:n=>n.split(" ")}},plugins:[...Z5.default,...Array.isArray(window[Ns].config.plugins)?window[Ns].config.plugins:[]]}),(0,X5.default)({remove:!1})]).process(`@tailwind base;@tailwind components;@tailwind utilities;${e}`);(!Yt||!Yt.isConnected)&&(Yt=document.createElement("style"),document.head.append(Yt)),Yt.textContent=i}}})();
     </script>
-    <style>
+        <style>
         body {
             margin: 0;
             overflow: hidden;
@@ -87,12 +87,12 @@ Check your Browserslist config to be sure that your targets are set up correctly
             user-select: none;
         }
         #shield-container {
-            width: 200px;
-            height: 6px;
+            width: 160px;
+            height: 4px;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 10px;
             overflow: hidden;
-            margin-top: 10px;
+            margin-top: 12px;
         }
         #shield-bar {
             width: 0%;
@@ -103,37 +103,41 @@ Check your Browserslist config to be sure that your targets are set up correctly
         }
         @keyframes pulse-gold {
             0% { transform: scale(1); color: #ffd700; }
-            50% { transform: scale(1.1); color: #fff; }
+            50% { transform: scale(1.05); color: #fff; }
             100% { transform: scale(1); color: #ffd700; }
         }
         .new-record {
             animation: pulse-gold 1s infinite;
-            text-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+            text-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
         }
     </style>
 </head>
-<body class="flex flex-col items-center justify-center h-screen unselectable">
+<body class="flex flex-col items-center justify-center h-screen unselectable overflow-hidden">
 
-    <!-- HUD -->
-    <div id="hud" class="absolute top-10 flex flex-col items-center pointer-events-none z-10 opacity-0 transition-opacity duration-500">
-        <div id="scoreLabel" class="text-white text-7xl font-black tracking-tighter opacity-30">00</div>
-        <div id="highScoreLabel" class="text-zinc-500 text-xs uppercase tracking-widest mt-1">Best: 0</div>
+    <!-- HUD (Score and Shield) -->
+    <div id="hud" class="absolute top-12 left-0 right-0 flex flex-col items-center pointer-events-none z-10 opacity-0 transition-opacity duration-700">
+        <div id="scoreLabel" class="text-white text-6xl md:text-8xl font-black tracking-tighter opacity-20 text-center leading-none">00</div>
+        <div id="highScoreLabel" class="text-zinc-500 text-[10px] md:text-xs uppercase tracking-widest mt-2 text-center">Best: 0</div>
         <div id="shield-container">
             <div id="shield-bar"></div>
         </div>
     </div>
 
-    <!-- UI Overlay -->
-    <div id="overlay" class="absolute inset-0 bg-black/90 backdrop-blur-md flex flex-col items-center justify-center z-20 transition-all duration-500">
-        <h1 id="statusTitle" class="text-white text-6xl font-black mb-2 tracking-tighter italic">ZEN ORBIT</h1>
-        <p id="statusSubtitle" class="text-zinc-400 text-xs mb-4 tracking-[0.3em] uppercase">Hyper-Casual Survival</p>
-        <div id="recordNotif" class="hidden text-yellow-400 text-sm font-bold mb-6 tracking-widest uppercase new-record">New High Score!</div>
-        
-        <div class="flex flex-col gap-4 items-center">
-            <button id="startBtn" class="group relative px-12 py-4 bg-white text-black font-bold rounded-full overflow-hidden transition-all active:scale-90 hover:shadow-[0_0_30px_rgba(255,255,255,0.3)]">
-                <span class="relative z-10">START MISSION</span>
+    <!-- UI Overlay (Menu and Game Over) -->
+    <div id="overlay" class="absolute inset-0 bg-black/90 backdrop-blur-xl flex flex-col items-center justify-center z-20 transition-all duration-500 px-8">
+        <div class="flex flex-col items-center justify-center text-center w-full max-w-sm">
+            <h1 id="statusTitle" class="text-white text-4xl md:text-6xl font-black mb-2 tracking-tighter italic uppercase text-center w-full">ZEN ORBIT</h1>
+            <p id="statusSubtitle" class="text-zinc-400 text-[10px] md:text-xs mb-6 tracking-[0.4em] uppercase text-center w-full">Hyper-Casual Survival</p>
+            
+            <div id="recordNotif" class="hidden text-yellow-400 text-xs font-bold mb-8 tracking-widest uppercase new-record text-center">New High Score!</div>
+            
+            <button id="startBtn" class="group relative px-12 py-5 bg-white text-black text-sm font-black rounded-full overflow-hidden transition-all active:scale-90 hover:shadow-[0_0_40px_rgba(255,255,255,0.4)] uppercase tracking-widest">
+                Start Mission
             </button>
-            <p class="text-zinc-600 text-[10px] mt-4 uppercase tracking-widest">Hold to Orbit Inner • Release to Orbit Outer</p>
+            
+            <p class="text-zinc-600 text-[9px] uppercase tracking-widest text-center mt-10 leading-relaxed opacity-60">
+                Hold to Orbit Inner • Release to Orbit Outer
+            </p>
         </div>
     </div>
 
@@ -152,26 +156,23 @@ Check your Browserslist config to be sure that your targets are set up correctly
         const statusSubtitle = document.getElementById('statusSubtitle');
         const recordNotif = document.getElementById('recordNotif');
 
-        // Game State
+        // Game Variables
         let score = 0;
-        // Parse high score as integer for reliable comparisons
         let highScore = parseInt(localStorage.getItem('zenOrbitEvoScore')) || 0;
         let isPlaying = false;
         let isHolding = false;
         let lastTime = 0;
         let shake = 0;
         
-        // Configuration
         const config = {
             outerOrbit: 0,
             innerOrbit: 0,
             playerBaseSpeed: 2.8,
             enemyBaseSpeed: 2.2,
             playerSize: 8,
-            trailLength: 25
+            trailLength: 22
         };
 
-        // Entities
         let player = {
             angle: 0,
             radius: 0,
@@ -186,7 +187,6 @@ Check your Browserslist config to be sure that your targets are set up correctly
         let spawnTimer = 0;
         let sparkTimer = 0;
 
-        // Initialize HUD with the saved high score
         highScoreLabel.innerText = `Best: ${highScore}`;
 
         function resize() {
@@ -205,16 +205,28 @@ Check your Browserslist config to be sure that your targets are set up correctly
         window.addEventListener('resize', resize);
         resize();
 
-        // Input Controls
-        const handleStart = (e) => { if (isPlaying) isHolding = true; };
-        const handleEnd = (e) => { isHolding = false; };
+        // Control Handling
+        const handleStart = (e) => { 
+            if (isPlaying) {
+                isHolding = true; 
+            }
+        };
+        const handleEnd = (e) => { 
+            isHolding = false; 
+        };
 
         window.addEventListener('mousedown', handleStart);
         window.addEventListener('mouseup', handleEnd);
-        window.addEventListener('touchstart', (e) => { if(e.target !== startBtn) handleStart(); }, {passive: false});
+        window.addEventListener('touchstart', (e) => { 
+            if(e.target !== startBtn) {
+                e.preventDefault();
+                handleStart();
+            }
+        }, {passive: false});
         window.addEventListener('touchend', handleEnd);
 
         startBtn.addEventListener('click', (e) => {
+            e.preventDefault();
             e.stopPropagation();
             resetGame();
         });
@@ -233,7 +245,6 @@ Check your Browserslist config to be sure that your targets are set up correctly
             player.hasShield = false;
             updateShieldUI();
             
-            // Sync current high score visually
             highScoreLabel.innerText = `Best: ${highScore}`;
             recordNotif.classList.add('hidden');
             
@@ -242,13 +253,13 @@ Check your Browserslist config to be sure that your targets are set up correctly
             
             hud.classList.remove('opacity-0');
             overlay.classList.add('opacity-0', 'pointer-events-none');
-            setTimeout(() => { if(isPlaying) overlay.style.display = 'none'; }, 500);
+            setTimeout(() => { 
+                if(isPlaying) overlay.style.display = 'none'; 
+            }, 500);
         }
 
         function triggerGameOver() {
             isPlaying = false;
-            
-            // Handle High Score Persistence
             const isNewRecord = score > highScore;
             if (isNewRecord) {
                 highScore = score;
@@ -260,12 +271,12 @@ Check your Browserslist config to be sure that your targets are set up correctly
             overlay.style.display = 'flex';
             overlay.classList.remove('opacity-0', 'pointer-events-none');
             statusTitle.innerText = isNewRecord ? "RECORD BROKEN" : "MISSION FAILED";
-            statusSubtitle.innerText = `FINAL SCORE: ${score}`;
+            statusSubtitle.innerText = `Final Score: ${score}`;
             startBtn.innerText = "RETRY MISSION";
             
             const px = canvas.width/2 + Math.cos(player.angle) * player.radius;
             const py = canvas.height/2 + Math.sin(player.angle) * player.radius;
-            createExplosion(px, py, '#ffffff', 30);
+            createExplosion(px, py, '#ffffff', 35);
             shake = 20;
         }
 
@@ -273,44 +284,38 @@ Check your Browserslist config to be sure that your targets are set up correctly
             const side = Math.floor(Math.random() * 4);
             let x, y;
             const margin = 100;
-
             if (side === 0) { x = Math.random() * canvas.width; y = -margin; }
             else if (side === 1) { x = Math.random() * canvas.width; y = canvas.height + margin; }
             else if (side === 2) { x = -margin; y = Math.random() * canvas.height; }
             else { x = canvas.width + margin; y = Math.random() * canvas.height; }
-
+            
             const angle = Math.atan2(canvas.height/2 - y, canvas.width/2 - x);
-            const speed = config.enemyBaseSpeed + (score * 0.05);
-
-            enemies.push({
-                x, y,
-                vx: Math.cos(angle) * speed,
-                vy: Math.sin(angle) * speed,
-                size: 12 + Math.random() * 8,
-                rot: Math.random() * Math.PI,
-                rotSpeed: (Math.random() - 0.5) * 0.1
+            const speed = config.enemyBaseSpeed + (score * 0.045);
+            enemies.push({ 
+                x, y, 
+                vx: Math.cos(angle) * speed, 
+                vy: Math.sin(angle) * speed, 
+                size: 14 + Math.random() * 10, 
+                rot: Math.random() * Math.PI, 
+                rotSpeed: (Math.random() - 0.5) * 0.12 
             });
         }
 
         function spawnSpark() {
             const targetOrbit = Math.random() > 0.5 ? config.outerOrbit : config.innerOrbit;
             const angle = Math.random() * Math.PI * 2;
-            sparks.push({
-                angle,
-                radius: targetOrbit,
-                pulse: 0
-            });
+            sparks.push({ angle, radius: targetOrbit });
         }
 
         function createExplosion(x, y, color, count = 15) {
             for (let i = 0; i < count; i++) {
-                particles.push({
-                    x, y,
-                    vx: (Math.random() - 0.5) * 15,
-                    vy: (Math.random() - 0.5) * 15,
-                    life: 1.0,
-                    color: color,
-                    size: Math.random() * 4 + 1
+                particles.push({ 
+                    x, y, 
+                    vx: (Math.random() - 0.5) * 18, 
+                    vy: (Math.random() - 0.5) * 18, 
+                    life: 1.0, 
+                    color, 
+                    size: Math.random() * 5 + 1 
                 });
             }
         }
@@ -328,188 +333,172 @@ Check your Browserslist config to be sure that your targets are set up correctly
 
         function update(deltaTime) {
             const dt = deltaTime / 16.66;
-
             if (shake > 0) shake -= 1 * dt;
-
+            
             if (!isPlaying) {
                 player.angle += 0.005 * dt;
             } else {
                 player.angle += (config.playerBaseSpeed / 60) * dt;
                 player.targetRadius = isHolding ? config.innerOrbit : config.outerOrbit;
                 player.radius += (player.targetRadius - player.radius) * 0.15 * dt;
-
+                
                 const px = canvas.width/2 + Math.cos(player.angle) * player.radius;
                 const py = canvas.height/2 + Math.sin(player.angle) * player.radius;
-
+                
                 player.trail.unshift({x: px, y: py});
                 if (player.trail.length > config.trailLength) player.trail.pop();
-
+                
                 spawnTimer += deltaTime;
-                if (spawnTimer > Math.max(200, 1000 - (score * 15))) {
-                    spawnEnemy();
-                    spawnTimer = 0;
-                    score++;
-                    scoreLabel.innerText = score.toString().padStart(2, '0');
+                const currentSpawnRate = Math.max(180, 1000 - (score * 14));
+                if (spawnTimer > currentSpawnRate) { 
+                    spawnEnemy(); 
+                    spawnTimer = 0; 
+                    score++; 
+                    scoreLabel.innerText = score.toString().padStart(2, '0'); 
                 }
-
+                
                 sparkTimer += deltaTime;
-                if (sparkTimer > 3000) {
-                    spawnSpark();
-                    sparkTimer = 0;
-                }
-
+                if (sparkTimer > 2800) { spawnSpark(); sparkTimer = 0; }
+                
                 for (let i = enemies.length - 1; i >= 0; i--) {
-                    const e = enemies[i];
-                    e.x += e.vx * dt;
-                    e.y += e.vy * dt;
+                    const e = enemies[i]; 
+                    e.x += e.vx * dt; 
+                    e.y += e.vy * dt; 
                     e.rot += e.rotSpeed * dt;
-
+                    
                     const dist = Math.hypot(px - e.x, py - e.y);
                     if (dist < config.playerSize + e.size/2) {
-                        if (player.hasShield) {
-                            player.shield = 0;
-                            player.hasShield = false;
-                            updateShieldUI();
-                            enemies.splice(i, 1);
-                            createExplosion(e.x, e.y, '#00f2ff', 10);
-                            shake = 10;
-                        } else {
-                            triggerGameOver();
+                        if (player.hasShield) { 
+                            player.shield = 0; 
+                            player.hasShield = false; 
+                            updateShieldUI(); 
+                            enemies.splice(i, 1); 
+                            createExplosion(e.x, e.y, '#00f2ff', 12); 
+                            shake = 12; 
+                        }
+                        else { 
+                            triggerGameOver(); 
                         }
                     }
-
-                    if (e.x < -200 || e.x > canvas.width + 200 || e.y < -200 || e.y > canvas.height + 200) {
-                        enemies.splice(i, 1);
+                    if (e.x < -250 || e.x > canvas.width + 250 || e.y < -250 || e.y > canvas.height + 250) { 
+                        enemies.splice(i, 1); 
                     }
                 }
-
+                
                 for (let i = sparks.length - 1; i >= 0; i--) {
-                    const s = sparks[i];
-                    const sx = canvas.width/2 + Math.cos(s.angle) * s.radius;
+                    const s = sparks[i]; 
+                    const sx = canvas.width/2 + Math.cos(s.angle) * s.radius; 
                     const sy = canvas.height/2 + Math.sin(s.angle) * s.radius;
-                    
-                    const dist = Math.hypot(px - sx, py - sy);
-                    if (dist < 30) {
-                        sparks.splice(i, 1);
-                        player.shield = Math.min(100, player.shield + 25);
-                        updateShieldUI();
-                        createExplosion(sx, sy, '#ffd700', 8);
+                    if (Math.hypot(px - sx, py - sy) < 30) { 
+                        sparks.splice(i, 1); 
+                        player.shield = Math.min(100, player.shield + 25); 
+                        updateShieldUI(); 
+                        createExplosion(sx, sy, '#ffd700', 10); 
                     }
                 }
             }
-
-            for (let i = particles.length - 1; i >= 0; i--) {
-                const p = particles[i];
-                p.x += p.vx * dt;
-                p.y += p.vy * dt;
-                p.life -= 0.02 * dt;
-                if (p.life <= 0) particles.splice(i, 1);
+            for (let i = particles.length - 1; i >= 0; i--) { 
+                const p = particles[i]; 
+                p.x += p.vx * dt; 
+                p.y += p.vy * dt; 
+                p.life -= 0.018 * dt; 
+                if (p.life <= 0) particles.splice(i, 1); 
             }
         }
 
         function draw() {
             ctx.fillStyle = '#050505';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
-
             ctx.save();
-            if (shake > 0) {
-                ctx.translate(Math.random() * shake - shake/2, Math.random() * shake - shake/2);
-            }
-
+            
+            if (shake > 0) ctx.translate(Math.random() * shake - shake/2, Math.random() * shake - shake/2);
+            
             const centerX = canvas.width / 2;
             const centerY = canvas.height / 2;
-
-            ctx.setLineDash([2, 15]);
-            ctx.strokeStyle = 'rgba(255, 255, 255, 0.05)';
+            
+            // Orbits
+            ctx.setLineDash([3, 18]);
+            ctx.strokeStyle = 'rgba(255, 255, 255, 0.06)';
             ctx.lineWidth = 1;
-            ctx.beginPath();
-            ctx.arc(centerX, centerY, config.outerOrbit, 0, Math.PI * 2);
-            ctx.stroke();
-            ctx.beginPath();
-            ctx.arc(centerX, centerY, config.innerOrbit, 0, Math.PI * 2);
-            ctx.stroke();
+            ctx.beginPath(); ctx.arc(centerX, centerY, config.outerOrbit, 0, Math.PI * 2); ctx.stroke();
+            ctx.beginPath(); ctx.arc(centerX, centerY, config.innerOrbit, 0, Math.PI * 2); ctx.stroke();
             ctx.setLineDash([]);
-
+            
+            // Sparks
             sparks.forEach(s => {
-                const sx = centerX + Math.cos(s.angle) * s.radius;
+                const sx = centerX + Math.cos(s.angle) * s.radius; 
                 const sy = centerY + Math.sin(s.angle) * s.radius;
-                const pulse = Math.sin(performance.now() / 100) * 5;
-                
-                ctx.fillStyle = '#ffd700';
-                ctx.shadowBlur = 15;
+                const pulse = Math.sin(performance.now() / 120) * 5;
+                ctx.fillStyle = '#ffd700'; 
+                ctx.shadowBlur = 15; 
                 ctx.shadowColor = '#ffd700';
-                ctx.beginPath();
-                ctx.arc(sx, sy, 4 + pulse/2, 0, Math.PI * 2);
-                ctx.fill();
+                ctx.beginPath(); ctx.arc(sx, sy, 5 + pulse/2, 0, Math.PI * 2); ctx.fill(); 
                 ctx.shadowBlur = 0;
             });
-
+            
+            // Trail
             if (player.trail.length > 1) {
-                ctx.beginPath();
-                ctx.lineWidth = 2;
+                ctx.beginPath(); ctx.lineWidth = 2.5;
                 for (let i = 0; i < player.trail.length - 1; i++) {
-                    const alpha = (1 - (i / player.trail.length)) * 0.4;
+                    const alpha = (1 - (i / player.trail.length)) * 0.45; 
                     ctx.strokeStyle = `rgba(255, 255, 255, ${alpha})`;
-                    ctx.moveTo(player.trail[i].x, player.trail[i].y);
+                    ctx.moveTo(player.trail[i].x, player.trail[i].y); 
                     ctx.lineTo(player.trail[i+1].x, player.trail[i+1].y);
-                    ctx.stroke();
+                    ctx.stroke(); 
                     ctx.beginPath();
                 }
             }
-
+            
             const px = centerX + Math.cos(player.angle) * player.radius;
             const py = centerY + Math.sin(player.angle) * player.radius;
             
-            if (player.hasShield) {
-                ctx.strokeStyle = 'rgba(0, 242, 255, 0.5)';
-                ctx.lineWidth = 2;
-                ctx.beginPath();
-                ctx.arc(px, py, config.playerSize + 8 + Math.sin(performance.now()/200)*2, 0, Math.PI * 2);
-                ctx.stroke();
+            // Shield Aura
+            if (player.hasShield) { 
+                ctx.strokeStyle = 'rgba(0, 242, 255, 0.6)'; 
+                ctx.lineWidth = 2; 
+                ctx.beginPath(); 
+                ctx.arc(px, py, config.playerSize + 10 + Math.sin(performance.now()/180)*3, 0, Math.PI * 2); 
+                ctx.stroke(); 
             }
-
-            ctx.fillStyle = '#ffffff';
-            ctx.shadowBlur = 20;
-            ctx.shadowColor = 'rgba(255, 255, 255, 0.6)';
-            ctx.beginPath();
-            ctx.arc(px, py, config.playerSize, 0, Math.PI * 2);
-            ctx.fill();
+            
+            // Player
+            ctx.fillStyle = '#ffffff'; 
+            ctx.shadowBlur = 20; 
+            ctx.shadowColor = 'rgba(255, 255, 255, 0.7)';
+            ctx.beginPath(); ctx.arc(px, py, config.playerSize, 0, Math.PI * 2); ctx.fill(); 
             ctx.shadowBlur = 0;
-
+            
+            // Enemies
             ctx.fillStyle = '#ff3b3b';
             enemies.forEach(e => {
-                ctx.save();
-                ctx.translate(e.x, e.y);
-                ctx.rotate(e.rot);
+                ctx.save(); 
+                ctx.translate(e.x, e.y); 
+                ctx.rotate(e.rot); 
                 ctx.fillRect(-e.size/2, -e.size/2, e.size, e.size);
-                ctx.fillStyle = '#ffffff';
-                ctx.fillRect(-e.size/4, -e.size/4, e.size/2, e.size/2);
-                ctx.fillStyle = '#ff3b3b';
+                ctx.fillStyle = '#ffffff'; 
+                ctx.fillRect(-e.size/4, -e.size/4, e.size/2, e.size/2); 
                 ctx.restore();
             });
-
-            particles.forEach(p => {
-                ctx.fillStyle = p.color;
-                ctx.globalAlpha = p.life;
-                ctx.beginPath();
-                ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-                ctx.fill();
+            
+            // Particles
+            particles.forEach(p => { 
+                ctx.fillStyle = p.color; 
+                ctx.globalAlpha = p.life; 
+                ctx.beginPath(); 
+                ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2); 
+                ctx.fill(); 
             });
-            ctx.globalAlpha = 1.0;
-
+            
             ctx.restore();
         }
 
         function loop(timestamp) {
             const deltaTime = timestamp - lastTime;
             lastTime = timestamp;
-
             update(Math.min(deltaTime, 50));
             draw();
-
             requestAnimationFrame(loop);
         }
-
         requestAnimationFrame(loop);
     </script>
 </body>
